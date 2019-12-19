@@ -137,8 +137,27 @@ namespace TechJobsConsole
             valueBuilder.Clear();
 
             return rowValues.ToArray();
-
-
         }
+
+        public static List<Dictionary<string, string>> FindByValue(string searchTerm)
+        {
+            LoadData();
+
+            List<Dictionary<string, string>> values = new List<Dictionary<string, string>>();
+
+            foreach (Dictionary<string, string> job in AllJobs)
+            {
+              foreach (KeyValuePair<string,string> kvp in job)
+                {
+                    if (kvp.Value == searchTerm)
+                    {
+                        values.Add(job);
+                        break;
+                    }
+                }
+            }
+            return values;
+        }
+
     }
 }
