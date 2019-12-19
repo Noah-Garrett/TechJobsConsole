@@ -137,6 +137,8 @@ namespace TechJobsConsole
             valueBuilder.Clear();
 
             return rowValues.ToArray();
+
+
         }
     }
 }
