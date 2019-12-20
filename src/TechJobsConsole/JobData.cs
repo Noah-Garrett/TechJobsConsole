@@ -149,13 +149,17 @@ namespace TechJobsConsole
             {
               foreach (KeyValuePair<string,string> kvp in job)
                 {
-                    if (kvp.Value == searchTerm)
+
+                    if (kvp.Value.ToLower().Contains(searchTerm.ToLower()))
+                        
                     {
                         values.Add(job);
                         break;
+                        //BREAK BREAK IT RALPH 4 IN THEATERS NOW
                     }
                 }
             }
+           
             return values;
         }
 
